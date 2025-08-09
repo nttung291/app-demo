@@ -1,0 +1,89 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "customer_id": 456,
+      "order_date": "2025-08-05",
+      "status": "pending",
+      "lines": [
+        {
+          "product_id": 1001,
+          "quantity": 2,
+          "unit_price": 25.50
+        },
+        {
+          "product_id": 1002,
+          "quantity": 1,
+          "unit_price": 15.00
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "customer_id": 789,
+      "order_date": "2025-08-03",
+      "status": "shipped",
+      "lines": [
+        {
+          "product_id": 1003,
+          "quantity": 3,
+          "unit_price": 10.75
+        },
+        {
+          "product_id": 1004,
+          "quantity": 2,
+          "unit_price": 8.99
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "customer_id": 123,
+      "order_date": "2025-08-07",
+      "status": "delivered",
+      "lines": [
+        {
+          "product_id": 1005,
+          "quantity": 1,
+          "unit_price": 99.99
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "customer_id": 456,
+      "order_date": "2025-08-01",
+      "status": "pending",
+      "lines": [
+        {
+          "product_id": 1006,
+          "quantity": 5,
+          "unit_price": 5.25
+        },
+        {
+          "product_id": 1007,
+          "quantity": 2,
+          "unit_price": 12.50
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "customer_id": 234,
+      "order_date": "2025-07-29",
+      "status": "shipped",
+      "lines": [
+        {
+          "product_id": 1008,
+          "quantity": 1,
+          "unit_price": 149.99
+        },
+        {
+          "product_id": 1009,
+          "quantity": 3,
+          "unit_price": 7.25
+        }
+      ]
+    }
+  ]
+}
