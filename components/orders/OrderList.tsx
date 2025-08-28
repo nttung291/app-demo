@@ -2,7 +2,8 @@ import React, { useMemo, useState } from "react";
 import { FlatList, Platform, StyleSheet } from "react-native";
 import { YStack, XStack, Card, Input } from "tamagui";
 import { useAppColors, useThrottle } from "@/hooks";
-import { useGetOrdersQuery } from "@/services";
+import { useGetOrders } from "@/services/ordersQueries";
+import { useOrdersStore } from "@/store/ordersStore";
 import { MonoText } from "../common/StyledText";
 import { Loading } from "../common/Loading";
 import { Error } from "../common/Error";
@@ -64,16 +65,15 @@ const OrderItem = ({ item, onPress, colors }: OrderItemProps) => {
 export const OrderList = () => {
   const router = useRouter();
   const { colors } = useAppColors();
-  const [searchTerm, setSearchTerm] = useState("");
+  const { searchTerm, statusFilter, setSearchTerm, setStatusFilter } = useOrdersStore();
   const throttledSearchTerm = useThrottle(searchTerm, 300);
-  const [statusFilter, setStatusFilter] = useState<string | null>(null);
 
   const {
     data: orders = [],
     isLoading,
     isError,
     refetch,
-  } = useGetOrdersQuery();
+  } = useGetOrders();
 
   const filteredOrders = useMemo(() => {
     const filterOrders = orders.filter((order: Order) => {

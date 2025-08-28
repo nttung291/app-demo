@@ -5,7 +5,8 @@ import { useAppColors } from "@/hooks";
 import { MonoText } from "../common/StyledText";
 import { Loading } from "../common/Loading";
 import { Error } from "../common/Error";
-import { useGetOrderByIdQuery } from "@/services";
+import { useGetOrderById } from "@/services/ordersQueries";
+import { useOrdersStore } from "@/store/ordersStore";
 
 interface OrderDetailsProps {
   orderId: number;
@@ -18,7 +19,7 @@ export const OrderDetails = ({ orderId }: OrderDetailsProps) => {
     isLoading,
     isError,
     refetch,
-  } = useGetOrderByIdQuery(orderId);
+  } = useGetOrderById(orderId);
 
   if (isLoading) {
     return <Loading />;

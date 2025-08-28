@@ -1,0 +1,69 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "retry": "Reintentar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "search": "Buscar",
+    "noResults": "No se encontraron resultados",
+    "settings": "Configuración"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "orders": "Pedidos",
+    "settings": "Configuración"
+  },
+  "orders": {
+    "title": "Pedidos",
+    "orderDetails": "Detalles del Pedido",
+    "orderNumber": "Pedido #{{number}}",
+    "status": "Estado",
+    "customer": "Cliente",
+    "date": "Fecha",
+    "total": "Total",
+    "items": "Artículos",
+    "quantity": "Cantidad",
+    "price": "Precio",
+    "subtotal": "Subtotal",
+    "tax": "Impuesto",
+    "shipping": "Envío",
+    "discount": "Descuento",
+    "noOrders": "No se encontraron pedidos",
+    "searchPlaceholder": "Buscar pedidos...",
+    "filterByStatus": "Filtrar por estado",
+    "allOrders": "Todos los Pedidos",
+    "statusNew": "Nuevo",
+    "statusProcessing": "Procesando",
+    "statusShipped": "Enviado",
+    "statusDelivered": "Entregado",
+    "statusCancelled": "Cancelado"
+  },
+  "settings": {
+    "title": "Configuración",
+    "language": "Idioma",
+    "theme": "Tema",
+    "darkMode": "Modo Oscuro",
+    "lightMode": "Modo Claro",
+    "systemDefault": "Predeterminado del Sistema",
+    "notifications": "Notificaciones",
+    "about": "Acerca de",
+    "version": "Versión",
+    "logout": "Cerrar Sesión",
+    "selectLanguage": "Seleccionar Idioma",
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "errors": {
+    "generic": "Algo salió mal",
+    "network": "Error de red",
+    "tryAgain": "Por favor, inténtelo de nuevo",
+    "notFound": "No encontrado",
+    "unauthorized": "No autorizado"
+  }
+}

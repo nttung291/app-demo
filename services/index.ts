@@ -1,1 +1,1 @@
-export * from './ordersApi'
+export * from './ordersQueries'

@@ -12,15 +12,19 @@ A responsive cross-platform application for managing orders across web, iOS, and
 - 📊 Order filtering and search
 - 🛠️ Responsive UI with Tamagui
 - 🧩 Modular component architecture
+- 🌐 Internationalization (i18n) with multiple language support
 
 ## Tech Stack
 
 - [Expo](https://expo.dev/) - React Native framework
 - [Expo Router](https://docs.expo.dev/router/introduction/) - File-based routing
 - [Tamagui](https://tamagui.dev/) - UI component library
-- [Redux Toolkit](https://redux-toolkit.js.org/) - State management
-- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) - API data fetching
+- [Zustand](https://github.com/pmndrs/zustand) - State management
+- [React Query](https://tanstack.com/query/latest) - API data fetching and caching
 - [React Navigation](https://reactnavigation.org/) - Navigation library
+- [i18next](https://www.i18next.com/) - Internationalization framework
+- [react-i18next](https://react.i18next.com/) - React bindings for i18next
+- [expo-localization](https://docs.expo.dev/versions/latest/sdk/localization/) - Device locale detection
 
 ## Project Structure
 
@@ -46,7 +50,8 @@ app-demo/
 ├── data/                   # Mock data
 ├── hooks/                  # Custom hooks
 ├── services/               # API services
-├── store/                  # Redux store configuration
+├── store/                  # Zustand store configuration
+├── translations/           # i18n translation files
 ├── types/                  # TypeScript type definitions
 └── utils/                  # Utility functions
 ```
@@ -75,19 +80,44 @@ yarn install
 
 3. Start the development server:
 ```bash
-yarn start
+# Development environment (default)
+yarn start:dev
+
+# Staging environment
+yarn start:staging
+
+# Production environment
+yarn start:prod
 ```
 
 4. Run on specific platforms:
 ```bash
-# For iOS
-yarn ios
+# For iOS (development environment)
+yarn ios:dev
 
-# For Android
-yarn android
+# For iOS (staging environment)
+yarn ios:staging
 
-# For Web
-yarn web
+# For iOS (production environment)
+yarn ios:prod
+
+# For Android (development environment)
+yarn android:dev
+
+# For Android (staging environment)
+yarn android:staging
+
+# For Android (production environment)
+yarn android:prod
+
+# For Web (development environment)
+yarn web:dev
+
+# For Web (staging environment)
+yarn web:staging
+
+# For Web (production environment)
+yarn web:prod
 ```
 
 5. Start the mock API server (optional):
@@ -110,7 +140,7 @@ yarn api
 
 ## State Management
 
-The app uses Redux Toolkit for state management and RTK Query for data fetching. The store is configured in the `store/` directory.
+The app uses Zustand for state management and React Query for data fetching and caching. Zustand stores are configured in the `store/` directory, and React Query hooks are in the `services/` directory.
 
 ## Theming
 
@@ -119,6 +149,45 @@ The app supports both light and dark themes using Tamagui's theming system and a
 ## API Integration
 
 The app connects to a REST API for order data. In development, it can use a mock API server powered by json-server.
+
+## Environment Configuration
+
+The app supports multiple environments (development, staging, production) with different configurations:
+
+### Environment Files
+
+- `.env.development` - Development environment variables
+- `.env.staging` - Staging environment variables
+- `.env.production` - Production environment variables
+
+### Configuration Files
+
+- `config/env.development.js` - Development configuration
+- `config/env.staging.js` - Staging configuration
+- `config/env.production.js` - Production configuration
+- `config/index.js` - Environment configuration loader
+
+### Building for Different Environments
+
+```bash
+# Build Android app for development
+yarn build:android:dev
+
+# Build Android app for staging
+yarn build:android:staging
+
+# Build Android app for production
+yarn build:android:prod
+
+# Build iOS app for development
+yarn build:ios:dev
+
+# Build iOS app for staging
+yarn build:ios:staging
+
+# Build iOS app for production
+yarn build:ios:prod
+```
 
 ## Contributing
 
@@ -132,8 +201,81 @@ The app connects to a REST API for order data. In development, it can use a mock
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+## Internationalization (i18n)
+
+The app supports multiple languages using i18next and react-i18next. The language can be changed in the settings screen.
+
+### Supported Languages
+
+- English (en)
+- Spanish (es)
+
+### Adding a New Language
+
+1. Create a new translation file in the `translations/` directory (e.g., `fr.json`)
+2. Copy the structure from an existing translation file (e.g., `en.json`)
+3. Translate all the strings to the new language
+4. Add the new language to the available languages in `context/LanguageContext.tsx`:
+
+```typescript
+const availableLanguages = [
+  { code: 'en', name: 'English' },
+  { code: 'es', name: 'Español' },
+  { code: 'fr', name: 'Français' } // New language
+];
+```
+
+5. Import and add the new language resources in `utils/i18n.ts`:
+
+```typescript
+import fr from '../translations/fr.json';
+
+const resources = {
+  en: { translation: en },
+  es: { translation: es },
+  fr: { translation: fr } // New language
+};
+```
+
+### Using Translations in Components
+
+To use translations in your components:
+
+```typescript
+import { useTranslation } from 'react-i18next';
+
+function MyComponent() {
+  const { t } = useTranslation();
+  
+  return (
+    <Text>{t('key.to.translate')}</Text>
+  );
+}
+```
+
+### Changing Language Programmatically
+
+To change the language programmatically:
+
+```typescript
+import { useLanguage } from '@/context/LanguageContext';
+
+function LanguageSwitcher() {
+  const { setLanguage } = useLanguage();
+  
+  const changeToSpanish = () => {
+    setLanguage('es');
+  };
+  
+  return (
+    <Button onPress={changeToSpanish}>Switch to Spanish</Button>
+  );
+}
+```
+
 ## Acknowledgments
 
 - [Expo](https://expo.dev/)
 - [Tamagui](https://tamagui.dev/)
 - [React Navigation](https://reactnavigation.org/)
+- [i18next](https://www.i18next.com/)

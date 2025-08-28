@@ -3,22 +3,23 @@ import { YStack, Button } from "tamagui";
 import { useRouter } from "expo-router";
 import { useAppColors } from "@/hooks";
 import { MonoText, Header, LayoutContainer } from "@/components";
+import { useTranslation } from "react-i18next";
 
 export default function HomeScreen() {
   const router = useRouter();
   const { colors } = useAppColors();
+  const { t } = useTranslation();
 
   return (
     <LayoutContainer>
-      <Header title="Home" />
+      <Header title={t('navigation.home')} />
 
       <YStack flex={1} justifyContent="center" alignItems="center" space="$4">
         <MonoText fontSize={24} fontWeight="bold" textAlign="center">
-          Welcome to Order Viewer
+          {t('home.welcome')}
         </MonoText>
         <MonoText textAlign="center" color={colors.textSecondary}>
-          A responsive application for managing orders across web, iOS, and
-          Android
+          {t('home.description')}
         </MonoText>
         <Button
           size="$5"
@@ -27,7 +28,7 @@ export default function HomeScreen() {
           onPress={() => router.push("/orders")}
           marginTop="$4"
         >
-          View Orders
+          {t('home.viewOrders')}
         </Button>
       </YStack>
     </LayoutContainer>

@@ -8,17 +8,19 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-import { Provider } from "react-redux";
 import { TamaguiProvider } from "tamagui";
-import { store } from "../store";
+import { QueryProvider } from "../context";
 import config from "../tamagui.config";
 import { ThemeProvider } from "../context/ThemeContext";
+import { LanguageProvider } from "../context/LanguageContext";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import Colors from "../constants/Colors";
 import "react-native-reanimated";
 import "../tamagui-web.css";
 import "../utils/animation";
+import "../utils/i18n";
+import { EnvironmentIndicator } from "../components/common/EnvironmentIndicator";
 
 export { ErrorBoundary } from "expo-router";
 
@@ -53,35 +55,39 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   return (
-    <Provider store={store}>
-      <ThemeProvider>
-        {({ theme }) => {
-          const statusBarStyle = theme === "dark" ? "light" : "dark";
+    <QueryProvider>
+      <LanguageProvider>
+        <ThemeProvider>
+          {(themeProps) => {
+            const { theme } = themeProps;
+            const statusBarStyle = theme === "dark" ? "light" : "dark";
 
-          return (
-            <TamaguiProvider config={config} defaultTheme={theme}>
-              <NavigationThemeProvider
-                value={theme === "dark" ? DarkTheme : DefaultTheme}
-              >
-                <StatusBar
-                  style={statusBarStyle}
-                  backgroundColor="transparent"
-                  translucent={true}
-                />
-                <SafeAreaProvider>
-                  <Stack screenOptions={{ headerShown: false }}>
-                    <Stack.Screen name="(drawer)" />
-                    <Stack.Screen
-                      name="orders/[id]"
-                      options={{ animation: "slide_from_right" }}
-                    />
-                  </Stack>
-                </SafeAreaProvider>
-              </NavigationThemeProvider>
-            </TamaguiProvider>
-          );
-        }}
-      </ThemeProvider>
-    </Provider>
+            return (
+              <TamaguiProvider config={config} defaultTheme={theme}>
+                <NavigationThemeProvider
+                  value={theme === "dark" ? DarkTheme : DefaultTheme}
+                >
+                  <StatusBar
+                    style={statusBarStyle}
+                    backgroundColor="transparent"
+                    translucent={true}
+                  />
+                  <SafeAreaProvider>
+                    <Stack screenOptions={{ headerShown: false }}>
+                      <Stack.Screen name="(drawer)" />
+                      <Stack.Screen
+                        name="orders/[id]"
+                        options={{ animation: "slide_from_right" }}
+                      />
+                    </Stack>
+                    <EnvironmentIndicator />
+                  </SafeAreaProvider>
+                </NavigationThemeProvider>
+              </TamaguiProvider>
+            );
+          }}
+        </ThemeProvider>
+      </LanguageProvider>
+    </QueryProvider>
   );
 }

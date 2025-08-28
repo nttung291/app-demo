@@ -1,0 +1,69 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search",
+    "noResults": "No results found",
+    "settings": "Settings"
+  },
+  "navigation": {
+    "home": "Home",
+    "orders": "Orders",
+    "settings": "Settings"
+  },
+  "orders": {
+    "title": "Orders",
+    "orderDetails": "Order Details",
+    "orderNumber": "Order #{{number}}",
+    "status": "Status",
+    "customer": "Customer",
+    "date": "Date",
+    "total": "Total",
+    "items": "Items",
+    "quantity": "Quantity",
+    "price": "Price",
+    "subtotal": "Subtotal",
+    "tax": "Tax",
+    "shipping": "Shipping",
+    "discount": "Discount",
+    "noOrders": "No orders found",
+    "searchPlaceholder": "Search orders...",
+    "filterByStatus": "Filter by status",
+    "allOrders": "All Orders",
+    "statusNew": "New",
+    "statusProcessing": "Processing",
+    "statusShipped": "Shipped",
+    "statusDelivered": "Delivered",
+    "statusCancelled": "Cancelled"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "systemDefault": "System Default",
+    "notifications": "Notifications",
+    "about": "About",
+    "version": "Version",
+    "logout": "Logout",
+    "selectLanguage": "Select Language",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "network": "Network error",
+    "tryAgain": "Please try again",
+    "notFound": "Not found",
+    "unauthorized": "Unauthorized"
+  }
+}

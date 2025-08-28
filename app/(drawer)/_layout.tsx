@@ -9,10 +9,12 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useAppColors } from "../../hooks/useAppColors";
 import { MonoText } from "@/components";
+import { useTranslation } from "react-i18next";
 
 function CustomDrawerContent(props: any) {
   const insets = useSafeAreaInsets();
   const { colors } = useAppColors();
+  const { t } = useTranslation();
 
   return (
     <DrawerContentScrollView
@@ -30,7 +32,7 @@ function CustomDrawerContent(props: any) {
             fontWeight: "bold",
           }}
         >
-          Order Viewer
+          {t('app.title')}
         </MonoText>
       </YStack>
 
@@ -44,7 +46,7 @@ function CustomDrawerContent(props: any) {
         padding="$4"
       >
         <MonoText fontSize={12} textAlign="center" color={colors.textSecondary}>
-          App Version 1.0.0
+          {t('app.version', { version: '1.0.0' })}
         </MonoText>
       </YStack>
     </DrawerContentScrollView>
@@ -55,6 +57,7 @@ export default function DrawerLayout() {
   const isWeb = Platform.OS === "web";
   const media = useMedia();
   const { colors } = useAppColors();
+  const { t } = useTranslation();
 
   return (
     <Drawer
@@ -78,21 +81,21 @@ export default function DrawerLayout() {
       <Drawer.Screen
         name="index"
         options={{
-          title: "Home",
+          title: t('navigation.home'),
           drawerIcon: ({ color }) => <Home size={24} color={color} />,
         }}
       />
       <Drawer.Screen
         name="orders"
         options={{
-          title: "Orders",
+          title: t('navigation.orders'),
           drawerIcon: ({ color }) => <ShoppingCart size={24} color={color} />,
         }}
       />
       <Drawer.Screen
         name="settings"
         options={{
-          title: "Settings",
+          title: t('navigation.settings'),
           drawerIcon: ({ color }) => <Settings size={24} color={color} />,
         }}
       />
