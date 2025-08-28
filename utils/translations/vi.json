@@ -1,0 +1,80 @@
+{
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "retry": "Thử lại",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "search": "Tìm kiếm",
+    "noResults": "Không tìm thấy kết quả",
+    "settings": "Cài đặt"
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "orders": "Đơn hàng",
+    "settings": "Cài đặt"
+  },
+  "orders": {
+    "title": "Đơn hàng",
+    "orderDetails": "Chi tiết đơn hàng",
+    "orderNumber": "Đơn hàng #{{number}}",
+    "status": "Trạng thái",
+    "customer": "Khách hàng",
+    "date": "Ngày",
+    "total": "Tổng cộng",
+    "items": "Sản phẩm",
+    "quantity": "Số lượng",
+    "price": "Giá",
+    "subtotal": "Tạm tính",
+    "tax": "Thuế",
+    "shipping": "Phí vận chuyển",
+    "discount": "Giảm giá",
+    "noOrders": "Không tìm thấy đơn hàng",
+    "searchPlaceholder": "Tìm kiếm đơn hàng...",
+    "filterByStatus": "Lọc theo trạng thái",
+    "allOrders": "Tất cả đơn hàng",
+    "statusNew": "Mới",
+    "statusProcessing": "Đang xử lý",
+    "statusShipped": "Đã gửi",
+    "statusDelivered": "Đã giao",
+    "statusCancelled": "Đã hủy"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "language": "Ngôn ngữ",
+    "theme": "Giao diện",
+    "darkMode": "Chế độ tối",
+    "lightMode": "Chế độ sáng",
+    "systemDefault": "Mặc định hệ thống",
+    "notifications": "Thông báo",
+    "about": "Giới thiệu",
+    "version": "Phiên bản",
+    "logout": "Đăng xuất",
+    "selectLanguage": "Chọn ngôn ngữ",
+    "english": "Tiếng Anh",
+    "vietnamese": "Tiếng Việt",
+    "enableNotifications": "Bật thông báo",
+    "appVersion": "Phiên bản ứng dụng"
+  },
+  "errors": {
+    "generic": "Đã xảy ra lỗi",
+    "network": "Lỗi kết nối",
+    "tryAgain": "Vui lòng thử lại",
+    "notFound": "Không tìm thấy",
+    "unauthorized": "Không được phép"
+  },
+  "home": {
+    "welcome": "Chào mừng đến với Quản lý Đơn hàng",
+    "description": "Ứng dụng đa nền tảng để quản lý đơn hàng trên web, iOS và Android",
+    "viewOrders": "Xem đơn hàng"
+  },
+  "app": {
+    "title": "Quản lý Đơn hàng",
+    "version": "Phiên bản {{version}}"
+  }
+}

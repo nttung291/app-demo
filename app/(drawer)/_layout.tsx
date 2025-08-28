@@ -7,7 +7,7 @@ import {
   DrawerItemList,
 } from "@react-navigation/drawer";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useAppColors } from "../../hooks/useAppColors";
+import { useAppColors } from "@/hooks";
 import { MonoText } from "@/components";
 import { useTranslation } from "react-i18next";
 
@@ -32,7 +32,7 @@ function CustomDrawerContent(props: any) {
             fontWeight: "bold",
           }}
         >
-          {t('app.title')}
+          {t("app.title")}
         </MonoText>
       </YStack>
 
@@ -46,7 +46,7 @@ function CustomDrawerContent(props: any) {
         padding="$4"
       >
         <MonoText fontSize={12} textAlign="center" color={colors.textSecondary}>
-          {t('app.version', { version: '1.0.0' })}
+          {t("app.version", { version: "1.0.0" })}
         </MonoText>
       </YStack>
     </DrawerContentScrollView>
@@ -81,21 +81,21 @@ export default function DrawerLayout() {
       <Drawer.Screen
         name="index"
         options={{
-          title: t('navigation.home'),
+          title: t("navigation.home"),
           drawerIcon: ({ color }) => <Home size={24} color={color} />,
         }}
       />
       <Drawer.Screen
         name="orders"
         options={{
-          title: t('navigation.orders'),
+          title: t("navigation.orders"),
           drawerIcon: ({ color }) => <ShoppingCart size={24} color={color} />,
         }}
       />
       <Drawer.Screen
         name="settings"
         options={{
-          title: t('navigation.settings'),
+          title: t("navigation.settings"),
           drawerIcon: ({ color }) => <Settings size={24} color={color} />,
         }}
       />

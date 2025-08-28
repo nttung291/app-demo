@@ -9,18 +9,15 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { TamaguiProvider } from "tamagui";
-import { QueryProvider } from "../context";
-import config from "../tamagui.config";
-import { ThemeProvider } from "../context/ThemeContext";
-import { LanguageProvider } from "../context/LanguageContext";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import Colors from "../constants/Colors";
+import { QueryProvider, ThemeProvider, LanguageProvider } from "@/context";
+import { EnvironmentIndicator } from "@/components";
+import config from "../tamagui.config";
 import "react-native-reanimated";
 import "../tamagui-web.css";
 import "../utils/animation";
 import "../utils/i18n";
-import { EnvironmentIndicator } from "../components/common/EnvironmentIndicator";
 
 export { ErrorBoundary } from "expo-router";
 

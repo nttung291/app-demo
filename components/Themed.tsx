@@ -1,8 +1,3 @@
-/**
- * Learn more about Light and Dark modes:
- * https://docs.expo.io/guides/color-schemes/
- */
-
 import React from "react";
 import { Text as DefaultText, View as DefaultView } from "tamagui";
 
@@ -34,12 +29,11 @@ export function useThemeColor(
 export function Text(props: TextProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
   const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
-  
+
   // Merge styles properly for web compatibility
-  const mergedStyle = typeof style === 'object' 
-    ? { color, ...style } 
-    : { color };
-    
+  const mergedStyle =
+    typeof style === "object" ? { color, ...style } : { color };
+
   return <DefaultText style={mergedStyle} {...otherProps} />;
 }
 
@@ -51,9 +45,10 @@ export function View(props: ViewProps) {
   );
 
   // Merge styles properly for web compatibility
-  const mergedStyle = typeof style === 'object' 
-    ? { backgroundColor, ...style } 
-    : { backgroundColor };
-    
+  const mergedStyle =
+    typeof style === "object"
+      ? { backgroundColor, ...style }
+      : { backgroundColor };
+
   return <DefaultView style={mergedStyle} {...otherProps} />;
 }

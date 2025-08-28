@@ -208,7 +208,7 @@ The app supports multiple languages using i18next and react-i18next. The languag
 ### Supported Languages
 
 - English (en)
-- Spanish (es)
+- Vietnamese (vi)
 
 ### Adding a New Language
 
@@ -220,7 +220,7 @@ The app supports multiple languages using i18next and react-i18next. The languag
 ```typescript
 const availableLanguages = [
   { code: 'en', name: 'English' },
-  { code: 'es', name: 'Español' },
+  { code: 'vi', name: 'Tiếng Việt' },
   { code: 'fr', name: 'Français' } // New language
 ];
 ```
@@ -232,7 +232,7 @@ import fr from '../translations/fr.json';
 
 const resources = {
   en: { translation: en },
-  es: { translation: es },
+  vi: { translation: vi },
   fr: { translation: fr } // New language
 };
 ```
@@ -263,12 +263,12 @@ import { useLanguage } from '@/context/LanguageContext';
 function LanguageSwitcher() {
   const { setLanguage } = useLanguage();
   
-  const changeToSpanish = () => {
-    setLanguage('es');
+  const changeToVietnamese = () => {
+    setLanguage('vi');
   };
   
   return (
-    <Button onPress={changeToSpanish}>Switch to Spanish</Button>
+    <Button onPress={changeToVietnamese}>Switch to Vietnamese</Button>
   );
 }
 ```

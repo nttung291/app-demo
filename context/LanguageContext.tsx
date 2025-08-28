@@ -16,7 +16,7 @@ const LanguageContext = createContext<LanguageContextType>({
   setLanguage: async () => {},
   availableLanguages: [
     { code: 'en', name: 'English' },
-    { code: 'es', name: 'Español' }
+    { code: 'vi', name: 'Tiếng Việt' }
   ]
 });
 
@@ -31,7 +31,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   // Available languages
   const availableLanguages = [
     { code: 'en', name: 'English' },
-    { code: 'es', name: 'Español' }
+    { code: 'vi', name: 'Tiếng Việt' }
   ];
 
   // Initialize language from storage on component mount
