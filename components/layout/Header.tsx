@@ -4,18 +4,20 @@ import { useNavigation } from "expo-router";
 import { DrawerActions } from "@react-navigation/native";
 import { Menu, ChevronLeft } from "@tamagui/lucide-icons";
 import { useAppColors } from "../../hooks/useAppColors";
-import { MonoText } from "../common/StyledText";
+import { MonoText, MonoTextBold } from "../common/StyledText";
 
 interface HeaderProps {
   title: string;
   showBackButton?: boolean;
   onBackPress?: () => void;
+  showDrawer?: boolean;
 }
 
 export function Header({
   title,
   showBackButton = false,
   onBackPress,
+  showDrawer = true,
 }: HeaderProps) {
   const navigation = useNavigation();
   const media = useMedia();
@@ -38,6 +40,7 @@ export function Header({
           marginRight="$2"
         />
       ) : (
+        showDrawer &&
         !media.gtSm && (
           <Button
             size="$3"
@@ -49,9 +52,9 @@ export function Header({
           />
         )
       )}
-      <MonoText color={colors.headerText} fontSize={20} fontWeight="bold">
+      <MonoTextBold color={colors.headerText} fontSize={20} fontWeight="bold">
         {title}
-      </MonoText>
+      </MonoTextBold>
     </XStack>
   );
 }

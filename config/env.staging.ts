@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   name: 'app-demo (Staging)',
   scheme: 'appdemo-staging',
   icon: './assets/images/icon.png',

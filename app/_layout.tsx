@@ -12,7 +12,6 @@ import { TamaguiProvider } from "tamagui";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { QueryProvider, ThemeProvider, LanguageProvider } from "@/context";
-import { EnvironmentIndicator } from "@/components";
 import config from "../tamagui.config";
 import "react-native-reanimated";
 import "../tamagui-web.css";
@@ -30,6 +29,9 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const [loaded, error] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    SpaceMonoBold: require("../assets/fonts/SpaceMono-Bold.ttf"),
+    SpaceMonoItalic: require("../assets/fonts/SpaceMono-Italic.ttf"),
+    SpaceMonoBoldItalic: require("../assets/fonts/SpaceMono-BoldItalic.ttf"),
     ...FontAwesome.font,
   });
 
@@ -71,13 +73,13 @@ function RootLayoutNav() {
                   />
                   <SafeAreaProvider>
                     <Stack screenOptions={{ headerShown: false }}>
+                      <Stack.Screen name="welcome" />
                       <Stack.Screen name="(drawer)" />
                       <Stack.Screen
                         name="orders/[id]"
                         options={{ animation: "slide_from_right" }}
                       />
                     </Stack>
-                    <EnvironmentIndicator />
                   </SafeAreaProvider>
                 </NavigationThemeProvider>
               </TamaguiProvider>

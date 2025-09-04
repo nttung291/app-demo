@@ -30,11 +30,10 @@ export function Text(props: TextProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
   const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
 
-  // Merge styles properly for web compatibility
-  const mergedStyle =
-    typeof style === "object" ? { color, ...style } : { color };
+  const textColor = otherProps.color || color;
+  delete otherProps.color;
 
-  return <DefaultText style={mergedStyle} {...otherProps} />;
+  return <DefaultText color={textColor} style={style} {...otherProps} />;
 }
 
 export function View(props: ViewProps) {
@@ -44,11 +43,10 @@ export function View(props: ViewProps) {
     "background"
   );
 
-  // Merge styles properly for web compatibility
-  const mergedStyle =
-    typeof style === "object"
-      ? { backgroundColor, ...style }
-      : { backgroundColor };
+  const viewColor = otherProps.backgroundColor || backgroundColor;
+  delete otherProps.backgroundColor;
 
-  return <DefaultView style={mergedStyle} {...otherProps} />;
+  return (
+    <DefaultView backgroundColor={viewColor} style={style} {...otherProps} />
+  );
 }

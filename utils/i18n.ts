@@ -1,7 +1,5 @@
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { getLocales } from 'expo-localization';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import LanguageDetector from 'i18next-react-native-language-detector';
 
 // Import translations

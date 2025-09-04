@@ -1,4 +1,8 @@
 {
+  "app": {
+    "title": "App Demo",
+    "version": "Version {{version}}"
+  },
   "common": {
     "loading": "Loading...",
     "error": "Error",
@@ -12,12 +16,29 @@
     "next": "Next",
     "search": "Search",
     "noResults": "No results found",
-    "settings": "Settings"
+    "settings": "Settings",
+    "phoneNumber": "Phone Number",
+    "or": "or"
   },
   "navigation": {
     "home": "Home",
     "orders": "Orders",
     "settings": "Settings"
+  },
+  "welcome": {
+    "title": "Welcome to",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "phoneNumberPlaceholder": "Enter your phone number",
+    "submit": "Continue",
+    "inputLabel": "Input",
+    "inputPlaceholder": "Enter text",
+    "enterOtp": "Enter verification code",
+    "otpInstructions": "We've sent a 6-digit code to your phone number",
+    "resend": "Resend OTP",
+    "changePhone": "Change phone number"
   },
   "orders": {
     "title": "Orders",
@@ -57,7 +78,14 @@
     "logout": "Logout",
     "selectLanguage": "Select Language",
     "english": "English",
-    "spanish": "Spanish"
+    "vietnamese": "Vietnamese",
+    "enableNotifications": "Enable Notifications",
+    "appVersion": "App Version"
+  },
+  "home": {
+    "welcome": "Welcome to Order Management",
+    "description": "Multi-platform application to manage orders on web, iOS and Android",
+    "viewOrders": "View Orders"
   },
   "errors": {
     "generic": "Something went wrong",
@@ -65,5 +93,9 @@
     "tryAgain": "Please try again",
     "notFound": "Not found",
     "unauthorized": "Unauthorized"
+  },
+  "validation": {
+    "phoneNumberFormat": "Phone number must be 9-12 digits",
+    "phoneNumberRequired": "Phone number is required"
   }
 }

@@ -1,21 +1,32 @@
-import config from './config';
-
-export default ({ config: expoConfig }) => {
-  // Merge the base configuration from app.json with our environment-specific config
-  return {
-    ...expoConfig,
-    name: config.name,
-    scheme: config.scheme,
-    version: config.version,
-    orientation: config.orientation,
-    userInterfaceStyle: config.userInterfaceStyle,
-    icon: config.icon,
-    splash: config.splash,
-    ios: config.ios,
-    android: config.android,
-    extra: {
-      ...expoConfig.extra,
-      ...config.extra,
+// Minimal app.config.js without any dependencies
+module.exports = {
+  name: 'app-demo (Dev)',
+  scheme: 'appdemo-dev',
+  icon: './assets/images/icon.png',
+  version: '1.0.0',
+  orientation: 'portrait',
+  userInterfaceStyle: 'automatic',
+  splash: {
+    image: './assets/images/splash-icon.png',
+    resizeMode: 'contain',
+    backgroundColor: '#ffffff',
+  },
+  ios: {
+    supportsTablet: true,
+    bundleIdentifier: 'com.anonymous.appdemo.dev',
+  },
+  android: {
+    adaptiveIcon: {
+      foregroundImage: './assets/images/adaptive-icon.png',
+      backgroundColor: '#ffffff',
     },
-  };
+    package: 'com.anonymous.appdemo.dev',
+  },
+  extra: {
+    apiUrl: 'http://localhost:3001',
+    eas: {
+      projectId: 'your-dev-project-id',
+    },
+    environment: 'development',
+  },
 };

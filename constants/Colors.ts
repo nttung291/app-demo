@@ -36,6 +36,19 @@ const palette = {
   },
   white: '#FFFFFF',
   black: '#000000',
+  gold: {
+    50:  '#FFFEF0',
+    100: '#FEFBC7',
+    200: '#FEF89F',
+    300: '#FFF585',
+    400: '#FEE949',
+    500: '#FDD835',
+    600: '#FBC02D',
+    700: '#F9A825',
+    800: '#F57F17',
+    900: '#E65100',
+    950: '#331A00',
+  }
 };
 
 // Theme colors
@@ -48,11 +61,13 @@ const Colors = {
     backgroundSecondary: palette.gray[50],
     
     // UI Elements
-    primary: palette.blue[500],
-    primaryDark: palette.blue[700],
-    primaryLight: palette.blue[300],
-    headerBackground: palette.blue[400],
+    primary: palette.gold[500],
+    primaryDark: palette.gold[700],
+    primaryLight: palette.gold[300],
+    headerBackground: palette.gold[300],
     headerText: palette.white,
+    textTertiary: palette.gray[600],
+    borderColor: palette.gray[300],
     
     // Status
     success: palette.green[500],
@@ -69,9 +84,9 @@ const Colors = {
     
     // Navigation
     drawerBackground: palette.gray[100],
-    drawerActiveText: palette.blue[500],
+    drawerActiveText: palette.gold[500],
     drawerInactiveText: palette.gray[700],
-    drawerActiveBackground: palette.blue[50],
+    drawerActiveBackground: palette.gold[50],
   },
   dark: {
     // Base
@@ -81,11 +96,13 @@ const Colors = {
     backgroundSecondary: palette.gray[800],
     
     // UI Elements
-    primary: palette.blue[400],
-    primaryDark: palette.blue[600],
-    primaryLight: palette.blue[300],
-    headerBackground: palette.blue[800],
+    primary: palette.gold[400],
+    primaryDark: palette.gold[600],
+    primaryLight: palette.gold[300],
+    headerBackground: palette.gold[300],
     headerText: palette.white,
+    textTertiary: palette.gray[600],
+    borderColor: palette.gray[300],
     
     // Status
     success: palette.green[500],
@@ -102,7 +119,7 @@ const Colors = {
     
     // Navigation
     drawerBackground: palette.gray[900],
-    drawerActiveText: palette.blue[400],
+    drawerActiveText: palette.gold[400],
     drawerInactiveText: palette.gray[400],
     drawerActiveBackground: palette.gray[800],
   },

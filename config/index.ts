@@ -1,18 +1,24 @@
-import Constants from 'expo-constants';
-import developmentConfig from './env.development';
-import stagingConfig from './env.staging';
-import productionConfig from './env.production';
+// Import environment configs
+const developmentConfig = require('./env.development');
+const stagingConfig = require('./env.staging');
+const productionConfig = require('./env.production');
 
 // Get the environment from the process.env or use 'development' as default
 const getEnvironment = () => {
   // For Expo Go, we'll use development by default
-  if (__DEV__) {
+  if (typeof __DEV__ !== 'undefined' && __DEV__) {
     return 'development';
   }
 
-  // For EAS builds, we can use the channel to determine the environment
+  // For EAS builds, try to use the environment variable
   // This will be set when building with EAS
-  const channel = Constants.expoConfig?.extra?.eas?.channel;
+  let channel;
+  try {
+    channel = process.env.EAS_BUILD_CHANNEL;
+  } catch (e) {
+    // If process.env is not available, default to development
+    return 'development';
+  }
   
   if (channel) {
     if (channel.startsWith('staging')) {
@@ -42,4 +48,4 @@ const getConfig = () => {
 };
 
 // Export the configuration
-export default getConfig();
+module.exports = getConfig();

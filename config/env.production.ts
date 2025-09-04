@@ -1,6 +1,6 @@
-export default {
-  name: 'app-demo (Dev)',
-  scheme: 'appdemo-dev',
+module.exports = {
+  name: 'app-demo',
+  scheme: 'appdemo',
   icon: './assets/images/icon.png',
   version: '1.0.0',
   orientation: 'portrait',
@@ -12,20 +12,20 @@ export default {
   },
   ios: {
     supportsTablet: true,
-    bundleIdentifier: 'com.anonymous.appdemo.dev',
+    bundleIdentifier: 'com.anonymous.appdemo',
   },
   android: {
     adaptiveIcon: {
       foregroundImage: './assets/images/adaptive-icon.png',
       backgroundColor: '#ffffff',
     },
-    package: 'com.anonymous.appdemo.dev',
+    package: 'com.anonymous.appdemo',
   },
   extra: {
-    apiUrl: 'http://localhost:3001',
+    apiUrl: 'https://api.appdemo.com',
     eas: {
-      projectId: 'your-dev-project-id',
+      projectId: 'your-production-project-id',
     },
-    environment: 'development',
+    environment: 'production',
   },
 };

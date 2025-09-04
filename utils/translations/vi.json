@@ -12,12 +12,29 @@
     "next": "Tiếp theo",
     "search": "Tìm kiếm",
     "noResults": "Không tìm thấy kết quả",
-    "settings": "Cài đặt"
+    "settings": "Cài đặt",
+    "phoneNumber": "Số điện thoại",
+    "or": "Hoặc"
   },
   "navigation": {
     "home": "Trang chủ",
     "orders": "Đơn hàng",
     "settings": "Cài đặt"
+  },
+  "welcome": {
+    "title": "Chào mừng đến với",
+    "email": "Email",
+    "emailPlaceholder": "Nhập email của bạn",
+    "password": "Mật khẩu",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "phoneNumberPlaceholder": "Nhập số điện thoại của bạn",
+    "submit": "Tiếp tục",
+    "inputLabel": "Nhập liệu",
+    "inputPlaceholder": "Nhập văn bản",
+    "enterOtp": "Nhập mã xác thực",
+    "otpInstructions": "Chúng tôi đã gửi mã 6 chữ số đến số điện thoại của bạn",
+    "resend": "Gửi lại OTP",
+    "changePhone": "Thay đổi số điện thoại"
   },
   "orders": {
     "title": "Đơn hàng",
@@ -67,6 +84,10 @@
     "tryAgain": "Vui lòng thử lại",
     "notFound": "Không tìm thấy",
     "unauthorized": "Không được phép"
+  },
+  "validation": {
+    "phoneNumberFormat": "Số điện thoại phải có 9-12 chữ số",
+    "phoneNumberRequired": "Số điện thoại là bắt buộc"
   },
   "home": {
     "welcome": "Chào mừng đến với Quản lý Đơn hàng",
